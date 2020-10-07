@@ -9,9 +9,7 @@ const imagemin = require('gulp-imagemin');
 const concat = require('gulp-concat');
 const jsImport = require('gulp-js-import');
 const sourcemaps = require('gulp-sourcemaps');
-const htmlPartial = require('gulp-html-partial');
 const clean = require('gulp-clean');
-const googleWebFonts = require( 'gulp-google-webfonts' );
 const cssbeautify = require('gulp-cssbeautify');
 const htmlbeautify = require('gulp-html-beautify')
 const isProd = process.env.NODE_ENV === 'prod';
@@ -24,9 +22,6 @@ const htmlFile = [
 
 function html() {
     return gulp.src(htmlFile)
-        .pipe(htmlPartial({
-            basePath: 'src/assets/partials/'
-        }))
         .pipe(htmlbeautify())
         .pipe(gulpIf(isProd, htmlmin({
             collapseWhitespace: true
