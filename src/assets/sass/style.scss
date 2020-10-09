@@ -33,13 +33,33 @@ h6 {
   margin-bottom: 20px;
 }
 
+.btn {
+  border-color: #F4A502;
+  border-radius: 0;
+}
+
 .navbar {
-  height: 60px;
+  height: 90px;
   background-color: #000;
+
+  .navbar-brand {
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 172px;
+    height: 58px;
+    background-image: url('/assets/img/navbar-logo-minto.png');
+    background-repeat: no-repeat;
+    background-size: 172px;
+  }
 }
 
 main {
-  margin-top: 60px;
+  margin-top: 90px;
+}
+
+.ec-section-dark {
+  background-color: #000;
+  color: #E2D99B;
 }
 
 .ec-plan .ec-legend {
@@ -79,7 +99,7 @@ main {
     .video-frame {
       z-index: 1;
     }
-    
+
     .video-poster {
       z-index: 0;
       pointer-events: none;
