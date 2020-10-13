@@ -6,7 +6,18 @@
 		setVideoContainer();
 
 		$(".owl-carousel").owlCarousel({
-			items: 1
+			margin: 40,
+			dots: false,
+			nav: true,
+			responsive:{
+				0:{
+					items:1
+				},
+				997:{
+					items:5,
+					slideBy: 5
+				}
+			}
 		});
 
 	});
