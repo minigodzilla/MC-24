@@ -1,13 +1,19 @@
+//
+// imports
+
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/owl.carousel/src/scss/owl.carousel";
 @import "_mixins.scss";
 @import "_fonts.scss";
 
+//
+// element overrides
+
 body {
   font-family: 'Visuelt Pro',sans-serif;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.5em;
+  line-height: 1.5;
   color: #3b3b53;
   background-color: #fff;
 }
@@ -20,15 +26,16 @@ h5,
 h6 {
   font-weight: 600;
   line-height: 1.1em;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .btn {
   background-color: transparent;
   border-color: #F4A502;
   border-radius: 0;
+  border-width: 0.09em;
   color: #000;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5em 1.5em;
 }
 
 .navbar {
@@ -54,6 +61,9 @@ main {
   margin-top: 90px;
 }
 
+//
+// main section helper classes
+
 .ec-section-dark {
   background-color: #000;
   color: #E2D99B;
@@ -62,6 +72,9 @@ main {
     color: #fff;
   }
 }
+
+//
+// main section-specific styling
 
 .ec-hero {
   background-color: #F4A402;
@@ -85,8 +98,110 @@ main {
   }
 }
 
-.ec-plan .ec-legend {
-  columns: 3;
+.ec-hero-cta {
+  padding: 90px 90px;
+
+  .ec-heading {
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .ec-copy {
+    font-size: 24px;
+    margin-bottom: 3rem;
+  }
+
+  .ec-btn {
+    font-size: 26px;
+    font-weight: 500;
+  }
+}
+
+.ec-art-cta {
+  padding: 90px 90px;
+
+  .ec-svg {
+    width: 35%;
+  }
+
+  .ec-heading {
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: #F4A502;
+    text-transform: uppercase;
+  }
+
+  .ec-copy {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    color: #fff;
+  }
+
+  .ec-btn {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+
+.ec-plan {
+  padding: 90px 0 45px 0;
+
+  .ec-img {
+    margin-bottom: 90px;
+  }
+
+  .ec-legend {
+
+    .ec-list-item {
+      position: relative;
+      height: 3.25em;
+      padding-left: 2.25em;
+      font-size: 18px;
+      line-height: 1.25em;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: red;
+        width: 1em;
+        height: 1em;
+      }
+
+      &-1::before {
+        background-color: #DED695;
+      }
+
+      &-2::before {
+        background-color: #CDE4EF;
+      }
+
+      &-3::before {
+        background-color: #E89F2E;
+      }
+
+      &-4::before {
+        background-color: #B681A2;
+      }
+
+      &-5::before {
+        background-color: #E0554F;
+      }
+
+      .ec-value {
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      .ec-detail {
+        font-weight: 300;
+      }
+    }
+  }
 }
 
 .ec-video .video-container {
