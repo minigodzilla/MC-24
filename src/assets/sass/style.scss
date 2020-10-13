@@ -1,4 +1,5 @@
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/owl.carousel/src/scss/owl.carousel";
 @import "_mixins.scss";
 @import "_fonts.scss";
 
@@ -62,6 +63,28 @@ main {
   }
 }
 
+.ec-hero {
+  background-color: #F4A402;
+  background-image: url('/assets/img/hero.jpg');
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+
+  @include media-breakpoint-up(md) {
+    background-size: auto 484px;
+    height: 484px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-size: auto 648px;
+    height: 648px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    background-size: auto 774px;
+    height: 774px;
+  }
+}
+
 .ec-plan .ec-legend {
   columns: 3;
 }
@@ -107,3 +130,17 @@ main {
     }
   }
 }
+
+.owl-carousel {
+  .owl-stage {
+  }
+}
+
+.ec-slide {
+  display: flex;
+
+  .ec-reason {
+    width: 20%;
+  }
+}
+

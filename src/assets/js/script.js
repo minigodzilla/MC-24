@@ -5,6 +5,10 @@
 
 		setVideoContainer();
 
+		$(".owl-carousel").owlCarousel({
+			items: 1
+		});
+
 	});
 
 	function setVideoContainer() {

@@ -46,11 +46,15 @@ function css() {
 }
 
 function js() {
-    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js','node_modules/popper.js/dist/popper.min.js','node_modules/jquery/dist/jquery.min.js','src/assets/js/script.js'])
+    return gulp.src([
+        'node_modules/bootstrap/dist/js/bootstrap.min.js',
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/owl.carousel/dist/owl.carousel.min.js',
+        'src/assets/js/script.js'])
         .pipe(jsImport({
             hideConsole: true
         }))
-        .pipe(concat('all.js'))
+        //.pipe(concat('all.js'))
         .pipe(gulpIf(isProd, uglify()))
         .pipe(gulp.dest('public/assets/js'));
 }
