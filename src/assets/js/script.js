@@ -11,7 +11,7 @@
 			nav: true,
 			responsive:{
 				0:{
-					items:1
+					items:2
 				},
 				997:{
 					items:5,
