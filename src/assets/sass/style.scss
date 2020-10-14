@@ -147,7 +147,7 @@ main {
     transition: opacity 200ms ease;
 
     @include media-breakpoint-down(sm) {
-      width: 24px;
+      width: 22px;
       height: 40px;
     }
 
@@ -174,21 +174,42 @@ main {
     }
 
     &.owl-prev {
-      left: 30px;
+
+      @include media-breakpoint-down(sm) {
+        left: 15px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        left: 30px;
+      }
     }
 
     &.owl-next {
       transform: translateY(-50%) rotate(180deg);
-      right: 30px;
+
+      @include media-breakpoint-down(sm) {
+        right: 15px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        right: 30px;
+      }
     }
   }
 
   .owl-dots {
     position: absolute;
-    bottom: 30px;
     left: 0;
     width: 100%;
     text-align: center;
+
+    @include media-breakpoint-down(sm) {
+      bottom: 15px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      bottom: 30px;
+    }
 
     .owl-dot {
       display: inline-block;
@@ -196,9 +217,23 @@ main {
       height: 12px;
       margin: 0 5px;
       border-radius: 50%;
-      border: 2px solid #fff;
+      border: solid #fff;
       background-color: rgba(255,255,255,0);
       transition: background-color 200ms ease;
+
+      @include media-breakpoint-down(sm) {
+        width: 8px;
+        height: 8px;
+        margin: 0 3px;
+        border-width: 1px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 12px;
+        height: 12px;
+        margin: 0 5px;
+        border-width: 2px;
+      }
 
       &.active {
         background-color: rgba(255,255,255,1);
@@ -583,6 +618,7 @@ main {
     @include media-breakpoint-down(sm) {
       font-size: 36px;
       line-height: 1.15;
+      margin-bottom: 40px;
     }
 
     @include media-breakpoint-up(md) {
@@ -608,11 +644,11 @@ main {
     .owl-nav button {
 
       @include media-breakpoint-down(sm) {
-        top: 45%;
+        top: 40%;
       }
 
       @include media-breakpoint-up(md) {
-        top: 25%;
+        top: 30%;
       }
 
       span {
@@ -622,7 +658,7 @@ main {
       &.owl-prev {
 
         @include media-breakpoint-down(sm) {
-          left: -44px;
+          left: -50px;
         }
 
         @include media-breakpoint-up(md) {
@@ -633,7 +669,7 @@ main {
       &.owl-next {
 
         @include media-breakpoint-down(sm) {
-          right: -44px;
+          right: -50px;
         }
 
         @include media-breakpoint-up(md) {

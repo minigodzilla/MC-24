@@ -29,7 +29,8 @@
 				},
 				992:{
 					items:5,
-					slideBy: 5
+					slideBy: 5,
+					smartSpeed: 150
 				}
 			}
 		});
