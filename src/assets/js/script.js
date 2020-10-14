@@ -23,15 +23,15 @@
 	});
 
 	function setVideoContainer() {
-		$('.video-container .video-poster').on('click', function() {
+		$('.ec-video-container .ec-video-poster').on('click', function() {
 
 			var container = $(this).parent();
-			var frame = container.find('.video-frame');
-			var poster = container.find('.video-poster');
+			var frame = container.find('.ec-video-frame');
+			var poster = container.find('.ec-video-poster');
 
 			var videoID = 'KnX1YlXxcvY';
 
-			container.addClass('video-open');
+			container.addClass('ec-video-open');
 			frame.prepend('<iframe src="https://www.youtube.com/embed/' + videoID + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 
 		})
