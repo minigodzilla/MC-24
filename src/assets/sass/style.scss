@@ -441,6 +441,12 @@ main {
         background-color: #E0554F;
       }
 
+      &-5 {
+        @include media-breakpoint-up(lg) {
+          margin-left: 60px;
+        }
+      }
+
       .ec-value {
         font-weight: 500;
         text-transform: uppercase;
