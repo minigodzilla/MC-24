@@ -5,7 +5,21 @@
 
 		setVideoContainer();
 
-		$(".owl-carousel").owlCarousel({
+		$('.ec-art-carousel .ec-carousel').owlCarousel({
+			dots: true,
+			loop: true,
+			nav: true,
+			responsive:{
+				0:{
+					items:1
+				},
+				992:{
+					items:1
+				}
+			}
+		});
+
+		$('.ec-reasons .ec-carousel').owlCarousel({
 			margin: 40,
 			dots: false,
 			nav: true,
@@ -13,7 +27,7 @@
 				0:{
 					items:1
 				},
-				997:{
+				992:{
 					items:5,
 					slideBy: 5
 				}
