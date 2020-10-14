@@ -518,6 +518,12 @@ main {
 
   .ec-carousel {
 
+    @include media-breakpoint-down(sm) {
+      // width: 100vw;
+      // margin-left: -30px;
+      // margin-right: -30px;
+    }
+
     .owl-stage {
       display: flex;
 
