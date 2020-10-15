@@ -323,6 +323,13 @@ main {
   }
 }
 
+.ec-art-carousel {
+  .ec-img {
+    height: 100vw / 16 * 9;
+    object-fit: cover;
+  }
+}
+
 .ec-art-cta {
   @include dark-section;
   color: #fff;
