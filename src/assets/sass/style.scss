@@ -20,7 +20,11 @@
 }
 
 //
-// element overrides
+// element and form control overrides
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Visuelt Pro',sans-serif;
@@ -54,11 +58,9 @@ h6 {
 }
 
 .form-check {
-  //padding-left: 1.5rem;
 
   .form-check-input {
     margin-top: 3px;
-    //margin-left: -1.5rem;
   }
 }
 
@@ -135,6 +137,7 @@ main {
 
     .owl-item {
       float: none;
+      flex-shrink: 0;
     }
   }
 
