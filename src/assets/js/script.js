@@ -122,7 +122,7 @@ $(function()
 		event.preventDefault();
 
 		// get form
-		var form = $('#ec-register-form');
+		var form = $('#ec-register-form')[0];
 
 		// create an FormData object 
 		var data = new FormData(form);
