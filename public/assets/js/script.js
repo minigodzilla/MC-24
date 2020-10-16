@@ -5,6 +5,8 @@
 
 		setVideoContainer();
 
+		// owl carousels: art/renderings and 10 reasons
+
 		$('.ec-art-carousel .ec-carousel').owlCarousel({
 			dots: true,
 			loop: true,
@@ -33,6 +35,49 @@
 					smartSpeed: 150
 				}
 			}
+		});
+
+		// event handler with jQuery AJAX for register form
+
+		$('.ec-btn-submit').click(function (event) {
+
+			//stop submit the form, we will post it manually.
+			event.preventDefault();
+
+			// Get form
+			var form = $('.ec-register-form')[0];
+
+			// Create an FormData object 
+			var data = new FormData(form);
+
+			// disabled the submit button
+			$('.ec-btn-submit').prop('disabled', true);
+
+			$.ajax({
+				type: "POST",
+				enctype: 'multipart/form-data',
+				url: "/upload.php",
+				data: data,
+				processData: false,
+				contentType: false,
+				cache: false,
+				timeout: 800000,
+				success: function (data) {
+
+					$('.ec-form-fields').addClass('d-none');
+					$('.ec-form-success').removeClass('d-none');
+
+				},
+				error: function (e) {
+
+					console.log("ERROR : ", e);
+
+					$('.ec-form-fields').addClass('d-none');
+					$('.ec-form-error').removeClass('d-none');
+
+				}
+			});
+
 		});
 
 	});
