@@ -89,13 +89,11 @@ $(function()
 	{
 		if (!$(this).val())
 		{
-			errorState = true;
 			$(this).removeClass ('is-valid').addClass ('is-invalid');
 		}
 
 		else
 		{
-			errorState = false;
 			$(this).removeClass ('is-invalid').addClass ('is-valid');
 		}
 	});
@@ -104,22 +102,49 @@ $(function()
 	{
 		if (!isEmail ($(this).val()))
 		{
-			errorState = true;
 			$(this).removeClass ('is-valid').addClass ('is-invalid');
 		}
 
 		else
 		{
-			errorState = false;
 			$(this).removeClass ('is-invalid').addClass ('is-valid');
 		}
 
 	});
 
-	$('.ec-btn-submit').click(function (event) {
+	$form.submit (function()
+	{
 
-		// disable default submit button behaviour
-		event.preventDefault();
+		// Check for empty fields
+		$inputs.each (function()
+		{
+			if (!$(this).val())
+			{
+				$(this).removeClass ('is-valid').addClass ('is-invalid');
+				errorState = true;
+			}
+
+			else
+			{
+				$(this).removeClass ('is-invalid').addClass ('is-valid');
+			}
+		});
+
+		// Check whether the email is valid
+		if (!isEmail ($(this).val()))
+		{
+			$email.removeClass ('is-valid').addClass ('is-invalid');
+			errorState = true;
+		}
+
+		else
+		{
+			$email.removeClass ('is-invalid').addClass ('is-valid');
+		}
+
+		// form has errors
+		if (errorState)
+			return false;
 
 		// get form
 		var form = $('#ec-register-form')[0];
