@@ -65,6 +65,7 @@ $(function()
 
 	var $form              = $('#ec-register-form');
 	var $inputs            = $form.find ('.form-control');
+	var $email             = $form.find ('.form-control[name=Email]');
 	var $button            = $form.find ('.ec-btn-submit');
 	var errorState         = false;
 
@@ -98,7 +99,7 @@ $(function()
 		}
 	});
 
-	$('.form-control[name=Email]').blur (function()
+	$email.blur (function()
 	{
 		if (!isEmail ($(this).val()))
 		{
@@ -112,8 +113,9 @@ $(function()
 
 	});
 
-	$form.submit (function()
+	$button.click (function(e)
 	{
+		e.preventDefault();
 
 		// Check for empty fields
 		$inputs.each (function()
