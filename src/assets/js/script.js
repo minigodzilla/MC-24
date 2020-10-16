@@ -45,7 +45,7 @@
 			event.preventDefault();
 
 			// Get form
-			var form = $('.ec-register-form')[0];
+			var form = $('#ec-register-form')[0];
 
 			// Create an FormData object 
 			var data = new FormData(form);
