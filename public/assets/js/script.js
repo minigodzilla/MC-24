@@ -113,11 +113,15 @@ $(function()
 
 	});
 
-	$button.click (function(e)
+	$form.submit (function(e)
 	{
+		// prevent default submit behaviour
 		e.preventDefault();
 
-		// Check for empty fields
+		// reset error state
+		errorState = false;
+
+		// check for empty fields
 		$inputs.each (function()
 		{
 			if (!$(this).val())
@@ -132,8 +136,8 @@ $(function()
 			}
 		});
 
-		// Check whether the email is valid
-		if (!isEmail ($(this).val()))
+		// check whether email is valid
+		if (!isEmail ($email.val()))
 		{
 			$email.removeClass ('is-valid').addClass ('is-invalid');
 			errorState = true;
@@ -144,10 +148,11 @@ $(function()
 			$email.removeClass ('is-invalid').addClass ('is-valid');
 		}
 
-		// form has errors
+		// if form has errors
 		if (errorState)
 			return false;
 
+		// now we do ajax
 		// get form
 		var form = $('#ec-register-form')[0];
 
