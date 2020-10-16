@@ -893,6 +893,10 @@ main {
     border-color: #000;
     color: #fff;
     text-transform: uppercase;
+
+    &::disabled {
+      opacity: 0.5;
+    }
   }
 }
 

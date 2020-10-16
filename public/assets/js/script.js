@@ -1,98 +1,161 @@
-(function ($) {
-	"use strict"; // Start of use strict
+//----------------------------------------------------------------------------//
+// Video Container                                                            //
+//----------------------------------------------------------------------------//
+$(function()
+{
 
-	$(document).ready(function () {
+	$('.ec-video-container .ec-video-poster').on('click', function() {
 
-		setVideoContainer();
+		var container = $(this).parent();
+		var frame = container.find('.ec-video-frame');
+		var poster = container.find('.ec-video-poster');
 
-		// owl carousels: art/renderings and 10 reasons
+		container.addClass('ec-video-open');
+		frame.prepend('<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/468269570?autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>');
 
-		$('.ec-art-carousel .ec-carousel').owlCarousel({
-			dots: true,
-			loop: true,
-			nav: true,
-			responsive:{
-				0:{
-					items:1
-				},
-				992:{
-					items:1
-				}
+	})
+
+});
+
+//----------------------------------------------------------------------------//
+// Owl Carousels                                                              //
+//----------------------------------------------------------------------------//
+$(function()
+{
+	
+	$('.ec-art-carousel .ec-carousel').owlCarousel({
+		dots: true,
+		loop: true,
+		nav: true,
+		responsive:{
+			0:{
+				items:1
+			},
+			992:{
+				items:1
 			}
-		});
+		}
+	});
 
-		$('.ec-reasons .ec-carousel').owlCarousel({
-			margin: 40,
-			dots: false,
-			nav: true,
-			responsive:{
-				0:{
-					items:1
-				},
-				992:{
-					items:5,
-					slideBy: 5,
-					smartSpeed: 150
-				}
+	$('.ec-reasons .ec-carousel').owlCarousel({
+		margin: 40,
+		dots: false,
+		nav: true,
+		responsive:{
+			0:{
+				items:1
+			},
+			992:{
+				items:5,
+				slideBy: 5,
+				smartSpeed: 150
 			}
-		});
+		}
+	});
 
-		// event handler with jQuery AJAX for register form
+});
 
-		$('.ec-btn-submit').click(function (event) {
+//----------------------------------------------------------------------------//
+// Register Form                                                              //
+//----------------------------------------------------------------------------//
 
-			//stop submit the form, we will post it manually.
-			event.preventDefault();
+$(function()
+{
+	////////////////////////////////////////////////////////////////////////////////
 
-			// Get form
-			var form = $('#ec-register-form')[0];
+	var $form              = $('#ec-register-form');
+	var $inputs            = $form.find ('.form-control');
+	var $button            = $form.find ('.ec-btn-submit');
+	var errorState         = false;
 
-			// Create an FormData object 
-			var data = new FormData(form);
+	////////////////////////////////////////////////////////////////////////////////
 
-			// disabled the submit button
-			$('.ec-btn-submit').prop('disabled', true);
+	function isEmail(email) {
 
-			$.ajax({
-				type: "POST",
-				enctype: 'multipart/form-data',
-				url: "/upload.php",
-				data: data,
-				processData: false,
-				contentType: false,
-				cache: false,
-				timeout: 800000,
-				success: function (data) {
+		var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-					$('.ec-form-fields').addClass('d-none');
-					$('.ec-form-success').removeClass('d-none');
+		if(!regex.test(email))
+		{
+			return false;
+		}
 
-				},
-				error: function (e) {
+		else
+		{
+			return true;
+		}
+	}
 
-					console.log("ERROR : ", e);
+	$inputs.blur (function()
+	{
+		if (!$(this).val())
+		{
+			errorState = true;
+			$(this).removeClass ('is-valid').addClass ('is-invalid');
+		}
 
-					$('.ec-form-fields').addClass('d-none');
-					$('.ec-form-error').removeClass('d-none');
+		else
+		{
+			errorState = false;
+			$(this).removeClass ('is-invalid').addClass ('is-valid');
+		}
+	});
 
-				}
-			});
+	$('.form-control[name=Email]').blur (function()
+	{
+		if (!isEmail ($(this).val()))
+		{
+			errorState = true;
+			$(this).removeClass ('is-valid').addClass ('is-invalid');
+		}
 
+		else
+		{
+			errorState = false;
+			$(this).removeClass ('is-invalid').addClass ('is-valid');
+		}
+
+	});
+
+	$('.ec-btn-submit').click(function (event) {
+
+		// disable default submit button behaviour
+		event.preventDefault();
+
+		// get form
+		var form = $('#ec-register-form');
+
+		// create an FormData object 
+		var data = new FormData(form);
+
+		// prevent duplicate submissions
+		$('.ec-btn-submit').prop('disabled', true);
+
+		// do a barrel roll
+		$.ajax({
+			type: "POST",
+			enctype: 'multipart/form-data',
+			url: "/register.php",
+			data: data,
+			processData: false,
+			contentType: false,
+			cache: false,
+			timeout: 800000,
+			success: function (data) {
+
+				$('.ec-form-fields').addClass('d-none');
+				$('.ec-form-success').removeClass('d-none');
+
+			},
+			error: function (e) {
+
+				console.log("ERROR : ", e);
+
+				$('.ec-form-fields').addClass('d-none');
+				$('.ec-form-error').removeClass('d-none');
+
+			}
 		});
 
 	});
 
-	function setVideoContainer() {
-		$('.ec-video-container .ec-video-poster').on('click', function() {
-
-			var container = $(this).parent();
-			var frame = container.find('.ec-video-frame');
-			var poster = container.find('.ec-video-poster');
-
-			container.addClass('ec-video-open');
-			frame.prepend('<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/468269570?autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>');
-
-		})
-	}
-
-})(jQuery); // End of use strict
+});
