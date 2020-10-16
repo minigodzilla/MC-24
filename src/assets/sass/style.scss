@@ -872,6 +872,21 @@ main {
     margin-top: -0.75rem;
   }
 
+  .ec-status-message {
+    font-weight: 300;
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 7rem;
+      margin-bottom: 2rem;
+      font-size: 14px;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: 18px;
+      min-height: 300px;
+    }
+  }
+
   .ec-btn,
   .ec-btn:hover {
     background-color: #000;
