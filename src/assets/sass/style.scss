@@ -189,12 +189,12 @@ main {
     cursor: pointer;
     transition: opacity 200ms ease;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       width: 22px;
       height: 40px;
     }
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       width: 37px;
       height: 70px;
     }
@@ -218,7 +218,7 @@ main {
 
     &.owl-prev {
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-down(md) {
         left: 15px;
       }
 
@@ -230,7 +230,7 @@ main {
     &.owl-next {
       transform: translateY(-50%) rotate(180deg);
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-down(md) {
         right: 15px;
       }
 
