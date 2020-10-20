@@ -246,7 +246,7 @@ main {
     width: 100%;
     text-align: center;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       bottom: 15px;
     }
 
@@ -264,7 +264,7 @@ main {
       background-color: rgba(255,255,255,0);
       transition: background-color 200ms ease;
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-down(md) {
         width: 8px;
         height: 8px;
         margin: 0 3px;
@@ -520,7 +520,7 @@ main {
   .ec-svg {
     width: 35%;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       margin-bottom: 2rem;
     }
   }
@@ -588,7 +588,7 @@ main {
         margin: 0 auto 1em auto;
       }
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(md) {
         height: 2.25em;
         font-size: 18px;
       }
@@ -824,7 +824,7 @@ main {
 
   .ec-carousel {
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       width: calc(100% - 80px);
       margin: 0 auto;
     }
@@ -835,7 +835,7 @@ main {
         top: 40%;
       }
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(lg) {
         top: 30%;
       }
 
@@ -850,6 +850,10 @@ main {
         }
 
         @include media-breakpoint-up(md) {
+          left: -5rem;
+        }
+
+        @include media-breakpoint-up(lg) {
           left: -8rem;
         }
       }
@@ -861,6 +865,10 @@ main {
         }
 
         @include media-breakpoint-up(md) {
+          right: -5rem;
+        }
+
+        @include media-breakpoint-up(lg) {
           right: -8rem;
         }
       }
@@ -941,9 +949,13 @@ main {
     font-weight: 400;
     text-transform: uppercase;
 
+    @include media-breakpoint-down(md) {
+      margin-top: 7rem;
+      line-height: 1.15;
+    }
+
     @include media-breakpoint-down(sm) {
       margin-top: 5rem;
-      line-height: 1.15;
     }
   }
 
@@ -962,7 +974,7 @@ main {
     font-weight: 300;
     text-transform: uppercase;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       margin-bottom: 2rem;
     }
   }
@@ -1025,13 +1037,13 @@ main {
   .ec-disclaimer {
     font-weight: 300;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       margin-top: 7rem;
       margin-bottom: 2rem;
       font-size: 14px;
     }
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       font-size: 18px;
     }
   }
@@ -1090,7 +1102,7 @@ main {
     background-size: 156px;
     background-position: 15px 50%;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       background-position: 15px 0;
       padding-top: 80px;
     }

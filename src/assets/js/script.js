@@ -36,10 +36,15 @@ $(function()
 		nav: true,
 		responsive:{
 			0:{
-				items:1
+				items: 1
 			},
 			768:{
-				items:5,
+				items: 2,
+				slideBy: 2,
+				smartSpeed: 150
+			},
+			992:{
+				items: 5,
 				slideBy: 5,
 				smartSpeed: 150
 			}
