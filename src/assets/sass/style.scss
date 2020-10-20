@@ -20,6 +20,46 @@
 }
 
 //
+// animated section
+
+@keyframes animate-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ec-animated-item {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.ec-animated .ec-animated-item {
+  animation: animate-in .4s ease-out;
+  animation-fill-mode: both;
+
+  &.ec-animate-order-1 {
+    animation-delay: 0;
+  }
+
+  &.ec-animate-order-2 {
+    animation-delay: .2s;
+  }
+
+  &.ec-animate-order-3 {
+    animation-delay: .4s;
+  }
+  
+  &.ec-animate-order-4 {
+    animation-delay: .6s;
+  }
+}
+
+//
 // element and form control overrides
 
 html {

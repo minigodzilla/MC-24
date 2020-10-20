@@ -191,3 +191,28 @@ $(function()
 	});
 
 });
+
+//----------------------------------------------------------------------------//
+// ScrollMagic Animation                                                      //
+//----------------------------------------------------------------------------//
+
+$(function()
+{
+	// Create an instance of the Scroll Magic Controller
+	let controller = new ScrollMagic.Controller();
+
+	// lazyLoad();
+
+	$('.ec-animated-section').each(function () {
+
+		var $this = $(this);
+
+		new ScrollMagic.Scene
+		({
+			triggerElement: this, triggerHook: 0.5, reverse: false
+		})
+		.setClassToggle(this, 'ec-animated')
+		.addTo(controller);
+	});
+
+});
