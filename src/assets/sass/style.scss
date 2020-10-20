@@ -252,33 +252,51 @@ main {
   background-color: #F4A402;
   position: relative;
   overflow: hidden;
+  height: 290px;
 
-  @include media-breakpoint-down(sm) {
-    background-size: auto 220px;
-    height: 220px;
+  @include media-breakpoint-up(sm) {
+    height: 355px;
   }
 
   @include media-breakpoint-up(md) {
-    background-size: auto 484px;
     height: 484px;
   }
 
   @include media-breakpoint-up(lg) {
-    background-size: auto 648px;
     height: 648px;
   }
 
   @include media-breakpoint-up(xl) {
-    background-size: auto 774px;
     height: 774px;
   }
 
-  @keyframes hero-container-anim {
-    0% {
+  @keyframes hero-container-anim-xl {
+    from {
       transform: scale(5.4) rotate(-45deg);
     }
-    100% {
-      transform: scale(1.0);
+  }
+
+  @keyframes hero-container-anim-lg {
+    from {
+      transform: scale(4.52) rotate(-45deg);
+    }
+  }
+
+  @keyframes hero-container-anim-md {
+    from {
+      transform: scale(3.38) rotate(-45deg);
+    }
+  }
+
+  @keyframes hero-container-anim-sm {
+    from {
+      transform: scale(1.53) rotate(-45deg);
+    }
+  }
+
+  @keyframes hero-container-anim-xs {
+    from {
+      transform: scale(1.53) rotate(-45deg);
     }
   }
 
@@ -302,21 +320,47 @@ main {
 
   .ec-hero-container {
     position: absolute;
+    top: -240px;
     width: 100%;
-    height: 100%;
-    animation-name: hero-container-anim;
+    height: 774px;
+    transform: scale(0.28);
     animation-duration: 750ms;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-timing-function: ease;
+    animation-name: hero-container-anim-sm;
+
+    @include media-breakpoint-up(sm) {
+      animation-name: hero-container-anim-sm;
+      transform: scale(0.46);
+      top: -210px;
+    }
+
+    @include media-breakpoint-up(md) {
+      animation-name: hero-container-anim-md;
+      transform: scale(0.63);
+      top: -145px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      animation-name: hero-container-anim-lg;
+      transform: scale(0.84);
+      top: -62px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      animation-name: hero-container-anim-xl;
+      transform: scale(1);
+      top: 0;
+    }
 
     .ec-svg {
       position: absolute;
 
       &.ec-east {
+        left: 50%;
         width: 890px;
         top: -95px;
-        left: 50%;
         transform: translateX(-860px);
       }
 
