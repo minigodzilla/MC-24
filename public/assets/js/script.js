@@ -27,14 +27,7 @@ $(function()
 		dots: true,
 		loop: true,
 		nav: true,
-		responsive:{
-			0:{
-				items:1
-			},
-			992:{
-				items:1
-			}
-		}
+		items: 1
 	});
 
 	$('.ec-reasons .ec-carousel').owlCarousel({
@@ -45,7 +38,7 @@ $(function()
 			0:{
 				items:1
 			},
-			992:{
+			768:{
 				items:5,
 				slideBy: 5,
 				smartSpeed: 150
