@@ -282,12 +282,21 @@ main {
     }
   }
 
-  @keyframes tagline-anim {
+  @keyframes logo-anim {
     0% {
       -webkit-mask-position-x: 100%;
     }
     100% {
       -webkit-mask-position-x: 0%;
+    }
+  }
+
+  @keyframes tagline-anim {
+    0% {
+      -webkit-mask-position-x: 0%;
+    }
+    100% {
+      -webkit-mask-position-x: 100%;
     }
   }
 
@@ -323,6 +332,15 @@ main {
         top: 80px;
         left: 50%;
         transform: translateX(280px);
+        -webkit-mask-image: linear-gradient(to right, black 0%, black 45%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0) 100%);
+        -webkit-mask-size: 225%;
+        -webkit-mask-position-x: 100%;
+        animation-name: logo-anim;
+        animation-duration: 500ms;
+        animation-delay: 750ms;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease;
       }
 
       &.ec-tagline {
@@ -330,9 +348,9 @@ main {
         top: 530px;
         left: 50%;
         transform: translateX(-560px);
-        -webkit-mask-image: linear-gradient(to right, black 0%, black 45%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0) 100%);
+        -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 45%, black 55%, black 100%);
         -webkit-mask-size: 225%;
-        -webkit-mask-position-x: 100%;
+        -webkit-mask-position-x: 0%;
         animation-name: tagline-anim;
         animation-duration: 500ms;
         animation-delay: 750ms;
