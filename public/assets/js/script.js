@@ -210,7 +210,7 @@ $(function()
 				offset: -100
 			})
 			.on("enter", function () {
-				$this.removeClass('sd-lazy');
+				$this.removeClass('ec-lazy');
 				$this.attr({
 					src:    $this.attr('data-src'),
 					srcset: $this.attr('data-srcset'),
