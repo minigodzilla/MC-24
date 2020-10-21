@@ -191,15 +191,41 @@ $(function()
 });
 
 //----------------------------------------------------------------------------//
-// ScrollMagic Animation                                                      //
+// ScrollMagic Animation incl. Lazy Load                                      //
 //----------------------------------------------------------------------------//
 
 $(function()
 {
+
+	function lazyLoad() {
+
+		$('.ec-lazy').each(function () {
+
+			var $this = $(this);
+
+			new ScrollMagic.Scene
+			({
+				triggerElement: this,
+				triggerHook: 1,
+				offset: -100
+			})
+			.on("enter", function () {
+				$this.removeClass('sd-lazy');
+				$this.attr({
+					src:    $this.attr('data-src'),
+					srcset: $this.attr('data-srcset'),
+					poster: $this.attr('data-poster')
+				});
+				$this.removeAttr('data-src data-srcset data-poster');
+			})
+			.addTo(controller);
+		});
+	};
+
 	// Create an instance of the Scroll Magic Controller
 	let controller = new ScrollMagic.Controller();
 
-	// lazyLoad();
+	lazyLoad();
 
 	$('.ec-animated-section').each(function () {
 
