@@ -1,5 +1,7 @@
 <?php
 
+header('Access-Control-Allow-Origin: http://localhost:3000');
+
 $data = $_POST;
 $data["IPAddress"] = $_SERVER["REMOTE_ADDR"];
 $data["SourceIP"] = $_SERVER['SERVER_ADDR'] ? $_SERVER['SERVER_ADDR'] : $_SERVER['LOCAL_ADDR'];
