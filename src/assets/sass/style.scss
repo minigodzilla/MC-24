@@ -394,6 +394,19 @@ main {
       top: 0;
     }
 
+    .ec-subheading {
+      position: absolute;
+      top: 160px;
+      left: 50%;
+      width: 610px;
+      font-size: 7.4em;
+      font-weight: 300;
+      line-height: .9;
+      text-transform: uppercase;
+      color: #fff;
+      transform: translateX(130px);
+    }
+
     .ec-svg {
       position: absolute;
 
@@ -412,10 +425,10 @@ main {
       }
 
       &.ec-logo {
-        width: 275px;
-        top: 80px;
+        width: 700px;
+        top: 160px;
         left: 50%;
-        transform: translateX(280px);
+        transform: translateX(-630px);
         -webkit-mask-image: linear-gradient(to right, black 0%, black 45%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0) 100%);
         -webkit-mask-size: 225%;
         -webkit-mask-position-x: 100%;
@@ -920,6 +933,7 @@ main {
 
 .ec-about-minto {
   @include dark-section;
+  color: #fff;
 
   @include media-breakpoint-down(sm) {
     padding: 50px 15px;
@@ -966,6 +980,10 @@ main {
 
   .ec-img {
     margin-bottom: 1rem;
+
+    &.ec-img-1 {
+      margin-top: 10em;
+    }
   }
 
   .ec-label {
@@ -991,11 +1009,6 @@ main {
     font-weight: 300;
     list-style: none;
     color: #fff;
-
-    @include media-breakpoint-up(md) {
-      width: 115%;
-      columns: 2;
-    }
 
     .ec-list-item {
       padding-left: 1.5rem;
