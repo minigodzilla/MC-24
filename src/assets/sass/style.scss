@@ -924,13 +924,6 @@ main {
   }
 }
 
-.ec-map .ec-img {
-  @include media-breakpoint-down(sm) {
-    height: 320px;
-    object-fit: cover;
-  }
-}
-
 .ec-about-minto {
   @include dark-section;
   color: #fff;
