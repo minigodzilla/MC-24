@@ -938,16 +938,14 @@ main {
     font-size: 20px;
   }
 
-  .container {
-    @include bg-img-logo-minto;
-    background-position: 15px 0;
+  .ec-about-link .ec-svg {
 
     @include media-breakpoint-down(sm) {
-      background-size: 120px;
+      width: 7em;
     }
 
     @include media-breakpoint-up(md) {
-      background-size: 30%;
+      width: 16em;
     }
   }
 
@@ -956,13 +954,12 @@ main {
     font-weight: 400;
     text-transform: uppercase;
 
-    @include media-breakpoint-down(md) {
-      margin-top: 7rem;
-      line-height: 1.15;
+    @include media-breakpoint-down(sm) {
+      margin-top: 2rem;
     }
 
-    @include media-breakpoint-down(sm) {
-      margin-top: 5rem;
+    @include media-breakpoint-up(md) {
+      margin-top: 1rem;
     }
   }
 
@@ -975,7 +972,7 @@ main {
     margin-bottom: 1rem;
 
     &.ec-img-1 {
-      margin-top: 10em;
+      margin-top: 4em;
     }
   }
 
