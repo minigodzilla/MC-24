@@ -107,7 +107,7 @@ h6 {
 .btn,
 .btn:hover {
   background-color: transparent;
-  border-color: #F4A502;
+  border-color: #bac48c;
   border-radius: 0;
   border-width: 0.09em;
   padding: 0.5em 1.5em;
@@ -289,7 +289,7 @@ main {
 // main section-specific styling
 
 .ec-hero {
-  background-color: #F4A402;
+  background-color: #212120;
   position: relative;
   overflow: hidden;
   height: 290px;
@@ -542,7 +542,7 @@ main {
     font-size: 36px;
     font-weight: 300;
     margin-bottom: 2rem;
-    color: #F4A502;
+    color: #bac48c;
     text-transform: uppercase;
 
     @include media-breakpoint-down(sm) {
@@ -718,7 +718,7 @@ main {
 
   .ec-heading {
     font-weight: 300;
-    color: #F4A502;
+    color: inherit;
     text-transform: uppercase;
 
     @include media-breakpoint-down(sm) {
@@ -831,7 +831,7 @@ main {
 
     .ec-span-2 {
       margin-left: auto;
-      color: #F4A502;
+      color: #bac48c;
     }
   }
 
@@ -898,7 +898,7 @@ main {
         height: 100%;
         top: 0;
         right: -20px;
-        background-color: #F4A502;
+        background-color: #bac48c;
       }
 
       .ec-img {
@@ -1055,7 +1055,7 @@ main {
   .ec-heading {
     font-size: 36px;
     font-weight: 300;
-    color: #F4A502;
+    color: inherit;
     text-transform: uppercase;
     margin-top: -0.75rem;
   }
