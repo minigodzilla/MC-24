@@ -34,9 +34,9 @@ $ret = json_decode(curl_exec($ch));
 		$jsonLasso["person"] = array("firstName" => $_POST["FirstName"], "lastName" =>$_POST["LastName"]);
 		$jsonLasso["emails"] = array(array("email"=>$_POST["Email"], "type"=>"Primary", "primary" => true));
 		$jsonLasso["phones"] = array(array("phone"=>$_POST["Phone"], "type"=>"Primary", "primary" => true));
-//			$jsonLasso["addresses"] = array(array("city"=>$_POST["City"], "state" => $_POST["Province"], "zipCode" => $_POST["PostalCode"], "type"=>"Work", "primary" => true));
+			$jsonLasso["addresses"] = array(array("city"=>$_POST["City"], "state" => $_POST["Province"], "zipCode" => $_POST["PostalCode"], "type"=>"Work", "primary" => true));
 //
-//			$jsonLasso["questions"][] = array("questionId"=>241258, "type" => "text", "name" => "Secondary Source", "path"=>"Source", "answers" => array(array("answer" => "East Hills Crossing 2")));
+			$jsonLasso["questions"][] = array("questionId"=>241258, "type" => "text", "name" => "Secondary Source", "path"=>"Source", "answers" => array(array("answer" => "East Hills Crossing 2")));
 //
 		try {
 
